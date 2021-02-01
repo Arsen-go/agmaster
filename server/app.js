@@ -16,9 +16,9 @@ app.use(express.static("public/assets/sass"));
 app.use(express.static("public/assets/webfonts"));
 
 app.use(express.static(path.join(__dirname, "node_modules")));
-app.engine("html", cons.swig);
-app.set("views" , path.join(__dirname,"..", "public"));
-app.set("view engine", "html");
+// app.engine("html", cons.swig);
+// app.set("views" , path.join(__dirname,"..", "public"));
+// app.set("view engine", "html");
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
