@@ -4,8 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon ./server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./server/app.js"
   },
   "author": "Arsen",
   "license": "ISC",
@@ -15,9 +14,13 @@
     "dotenv": "^8.2.0",
     "email-validator": "^2.0.4",
     "express": "^4.17.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "redis": "^3.0.2"
   },
   "devDependencies": {
     "eslint": "^7.18.0"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
