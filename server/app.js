@@ -26,7 +26,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-	res.sendFile(path.join(__dirname, "..", "/public/index.html"));
+	res.send(path.join(__dirname, "..", "/public/index.html"));
 });
 
 app.post("/message", (req, res) => {
