@@ -17,16 +17,16 @@ app.use(express.static("public/assets/webfonts"));
 
 app.use(express.static(path.join(__dirname, "node_modules")));
 app.engine("html", cons.swig);
-app.set("views", path.join(__dirname,"..", "public"));
+app.set("views" , path.join(__dirname,"..", "public"));
 app.set("view engine", "html");
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-	console.log("server listening port-> 3000"); 
+	console.log("server listening port-> 3000");  
 });
 
 app.get("/", (req, res) => {
-	res.send(path.join(__dirname, "..", "/public/index.html"));
+	res.sendFile(path.join(__dirname, "..", "/public/index.html")); 
 });
 
 app.post("/message", (req, res) => {
