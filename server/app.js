@@ -7,13 +7,13 @@ const { sendMail, sendMailToUser } = require("./mail_controller");
 const cons = require("consolidate");
 
 app.use(bodyParser.json());
-app.use(express.static("public"));
-app.use(express.static("public/images"));
+// app.use(express.static("public"));
+// app.use(express.static("public/images"));
    
-app.use(express.static("public/assets/js"));
-app.use(express.static("public/assets/css"));
-app.use(express.static("public/assets/sass"));
-app.use(express.static("public/assets/webfonts"));
+// app.use(express.static("public/assets/js"));
+// app.use(express.static("public/assets/css"));
+// app.use(express.static("public/assets/sass"));
+// app.use(express.static("public/assets/webfonts"));
 
 app.use(express.static(path.join(__dirname, "node_modules")));
 app.engine("html", cons.swig);
@@ -25,7 +25,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname,"..","/public/indexz.html"));
+    res.sendFile(path.join(__dirname,"..","/public/index.html"));
 });
 
 app.post("/message", (req, res) => {
