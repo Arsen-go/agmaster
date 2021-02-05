@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const path = require("path");
-const { sendMail, sendMailToUser } = require("./mail_controller");
+const { sendMail, sendMailToUser } = require("./server/mail_controller/index");
 const cons = require("consolidate");
 
 app.use(bodyParser.json());
@@ -15,10 +15,10 @@ app.use(bodyParser.json());
 // app.use(express.static("public/assets/sass"));
 // app.use(express.static("public/assets/webfonts"));
 
-app.use(express.static(path.join(__dirname, "node_modules")));
-app.engine("html", cons.swig);
-app.set("views", path.join(__dirname,"..", "public"));
-app.set("view engine", "html");
+// app.use(express.static(path.join(__dirname, "node_modules")));
+// app.engine("html", cons.swig);
+// app.set("views", path.join(__dirname,"..", "public"));
+// app.set("view engine", "html");
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
 	console.log(`server listening port-> ${port}`);  
