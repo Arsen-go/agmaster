@@ -19,7 +19,8 @@ app.use(bodyParser.json());
 // app.engine("html", cons.swig);
 // app.set("views", path.join(__dirname,"..", "public"));
 // app.set("view engine", "html");
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
+app.set('port', port)
 app.listen(port, () => {
 	console.log(`server listening port-> ${port}`);  
 });
