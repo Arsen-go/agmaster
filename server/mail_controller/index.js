@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const db = require("../db");
 const validator = require("email-validator");
 const transport = nodemailer.createTransport({
     service: "Gmail",
