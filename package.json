@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "author": "Arsen",
   "license": "ISC",
@@ -18,7 +18,8 @@
     "mongoose": "^5.11.15",
     "node-mailer": "^0.1.1",
     "path": "^0.12.7",
-    "redis": "^3.0.2"
+    "redis": "^3.0.2",
+    "swig": "^1.4.2"
   },
   "devDependencies": {
     "eslint": "^7.18.0"
