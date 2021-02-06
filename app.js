@@ -10,7 +10,7 @@ app.use("/", indexRouter);
 
 app.use(bodyParser.json());
 
-// app.use(express.static("public"));
+app.use(express.static("public"));
 app.use(express.static("html/images"));
    
 app.use(express.static("html/assets/js"));
