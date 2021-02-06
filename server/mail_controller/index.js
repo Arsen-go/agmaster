@@ -1,21 +1,29 @@
 const nodemailer = require("nodemailer");
 const db = require("../db");
+const Message = require("../messageSchema");
 const validator = require("email-validator");
 const transport = nodemailer.createTransport({
     service: "Gmail",
     auth: {
+        type: "OAuth2",
         user: "agmaster304@gmail.com",
         pass: "kamaro312"
     }
 });
 
-function sendMail(req) {
+async function sendMail(req) {
     const mailOptions = {
         from: req.body.email,
         to: "agas89@inbox.ru",
         subject: "Question",
         text: `Քեռի նամակ է ուղղարկե քեզ ${req.body.email} -ը ասումա՝\n ${req.body.message}`
     };
+    let message = new Message({
+        name: req.body.name,
+        email: req.body.email,
+        text: req.body.message,
+    });
+    await message.save();
     if (validator.validate(req.body.email)) {
         transport.sendMail(mailOptions, function (error, info) {
             if (error) {
